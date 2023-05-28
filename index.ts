@@ -1,4 +1,5 @@
 import * as express from "express";
+import 'express-async-errors';
 import * as methodOverride from "method-override"
 import {static as staticExpress, urlencoded} from "express";
 import {engine} from "express-handlebars";
