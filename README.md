@@ -26,9 +26,9 @@ Jest to miejsce, w którym wpisujemy 10 najlepszych wojowników. Najwyżej pokaz
 
 PLAN:
 1. v1:
-- Skonfigurować WS,
-- Potrzebne paczki i konfiguracja TS,
-- Folder publiczny - pliki statyczne,
+- Skonfigurować WS, OK
+- Potrzebne paczki i konfiguracja TS, OK
+- Konfiguracja Express'ai folder publiczny - pliki statyczne,
 - Ogólna struktura routerów - ścieżek - zaplanować jakie ścieżki się pojawią,
 - Zaplanowanie widoków / ogólna struktura,
 - Rekordy,
