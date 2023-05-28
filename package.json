@@ -15,5 +15,23 @@
   "bugs": {
     "url": "https://github.com/jakubhfake/MortalKombatArenaMK/issues"
   },
-  "homepage": "https://github.com/jakubhfake/MortalKombatArenaMK#readme"
+  "homepage": "https://github.com/jakubhfake/MortalKombatArenaMK#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "express-handlebars": "^7.0.7",
+    "method-override": "^3.0.0",
+    "mongodb": "^5.5.0",
+    "mysql2": "^3.3.3",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/method-override": "^0.0.32",
+    "@types/node": "^20.2.5",
+    "@types/uuid": "^9.0.1",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.0.4"
+  }
 }
