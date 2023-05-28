@@ -3,6 +3,7 @@ import 'express-async-errors';
 import * as methodOverride from "method-override"
 import {static as staticExpress, urlencoded} from "express";
 import {engine} from "express-handlebars";
+import {homeRouter} from "./routers/home";
 const app = express();
 
 app.use(methodOverride('_method'));
@@ -16,9 +17,8 @@ app.engine('.hbs', engine({
 }));
 app.set('view engine', '.hbs');
 
-app.get('/', (req, res) => {
-    res.send('Hello!!!')
-});
+app.use('/', homeRouter);
+
 //app.use(handleError);
 
 app.listen(3000, 'localhost', () => {
