@@ -28,8 +28,18 @@ PLAN:
 1. v1:
 - Skonfigurować WS, OK
 - Potrzebne paczki i konfiguracja TS, OK
-- Konfiguracja Express'ai folder publiczny - pliki statyczne,
-- Ogólna struktura routerów - ścieżek - zaplanować jakie ścieżki się pojawią,
+- Konfiguracja Express'ai folder publiczny - pliki statyczne, OK
+- Ogólna struktura routerów - ścieżek - zaplanować jakie ścieżki się pojawią:
+    - Strona główna,
+      - /,
+    - Rejestracja wojowników,
+      - Formularz,
+      - Zapisywanie,
+    - Arena walk,
+      - Formularz wybiru wojownika,
+      - Przeprowadzenie walki / Log walki
+    - Sala sław,
+        - Lista wojowników,
 - Zaplanowanie widoków / ogólna struktura,
 - Rekordy,
 - Logika związana z tworzeniem wojowników,
