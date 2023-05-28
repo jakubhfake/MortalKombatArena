@@ -29,7 +29,7 @@ PLAN:
 - Skonfigurować WS, OK
 - Potrzebne paczki i konfiguracja TS, OK
 - Konfiguracja Express'ai folder publiczny - pliki statyczne, OK
-- Ogólna struktura routerów - ścieżek - zaplanować jakie ścieżki się pojawią:
+- Ogólna struktura routerów - ścieżek - zaplanować jakie ścieżki się pojawią: OK
     - Strona główna,
       - /,
     - Rejestracja wojowników,
@@ -40,8 +40,8 @@ PLAN:
       - Przeprowadzenie walki / Log walki
     - Sala sław,
         - Lista wojowników,
-- Zaplanowanie widoków / ogólna struktura,
-- Rekordy,
+- Zaplanowanie widoków / ogólna struktura, OK
+- Rekordy WOJOWNIKA,
 - Logika związana z tworzeniem wojowników,
 - Logika związana z salą sław
 - Logika związana z areną walk,
