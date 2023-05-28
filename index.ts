@@ -4,6 +4,7 @@ import * as methodOverride from "method-override"
 import {static as staticExpress, urlencoded} from "express";
 import {engine} from "express-handlebars";
 import {homeRouter} from "./routers/home";
+import {warriorRouter} from "./routers/warrior";
 const app = express();
 
 app.use(methodOverride('_method'));
@@ -18,6 +19,7 @@ app.engine('.hbs', engine({
 app.set('view engine', '.hbs');
 
 app.use('/', homeRouter);
+app.use('/warrior', warriorRouter);
 
 //app.use(handleError);
 
