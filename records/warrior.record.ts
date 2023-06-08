@@ -4,10 +4,20 @@ export class WarriorRecord {
      * name of warrior must be unique
      */
     public readonly name: string;
-    public readonly force: string;
-    public readonly defence: string;
-    public readonly stamina: string;
-    public readonly agility: string;
+    public readonly force: number;
+    public readonly defence: number;
+    public readonly stamina: number;
+    public readonly agility: number;
     public wins?: number;
+
+    constructor(obj: WarriorRecord) {
+        const{id, name, force, defence, stamina, agility, wins} = obj;
+
+        const sum = [force, defence, stamina, agility].reduce((prev, curr) => prev + curr, 0);
+
+        if (sum !== 10) {
+
+        }
+    }
 
 }
