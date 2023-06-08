@@ -8,6 +8,6 @@ export class WarriorRecord {
     public readonly defence: string;
     public readonly stamina: string;
     public readonly agility: string;
-    public wins = 0;
+    public wins?: number;
 
 }
