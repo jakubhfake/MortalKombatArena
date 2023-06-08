@@ -66,13 +66,20 @@ PLAN:
     - Sala sław,
         - Lista wojowników,
 - Zaplanowanie widoków / ogólna struktura, OK
-- Rekordy WOJOWNIKA / Baza danych:
+- Rekordy WOJOWNIKA / Baza danych: (podstawowa konfiguracja bazy danych znajduje się w SQL/mortal_combat_arena_basic.sql)
     - Nazwa bazy danych: mortal_kombat_arena,
     - Tabele:
-        - warrior,
-- Logika związana z tworzeniem wojowników,
-- Logika związana z salą sław
-- Logika związana z areną walk,
+        - warriors,
+            - ID - UUID VARCHAR(36)
+            - Imię/Nazwa - VARCHAR(?) - unikalne
+            - Siła - THINYINT(2)
+            - Obrona - THINYINT(2)
+            - Wytrzymałość - THINYINT(2)
+            - Zwinność -THINYINT(2)
+            - Liczba zwycięstw: domyślnie 0 - INT(11)
+ - Logika związana z tworzeniem wojowników, 
+ - Logika związana z salą sław
+ - Logika związana z areną walk,
     
 2. V2:
 - Log walki: możesz zrobić bardzo ładną wersję tego - poprzez dodanie np. ikon czy innych kolorów w zależności od typu sytuacji,
