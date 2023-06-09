@@ -6,4 +6,4 @@ export const pool = createPool({
     database: 'mortal_combat_arena',
     namedPlaceholders: true,
     decimalNumbers: true,
-})
+});
