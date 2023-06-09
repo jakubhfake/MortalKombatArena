@@ -2,7 +2,17 @@ import {ValidationError} from "../utils/errors";
 import {v4 as uuid} from 'uuid';
 import {pool} from "../utils/db";
 
-export class WarriorRecord {
+export interface WarriorEntity {
+    id?: string;
+    readonly name: string;
+    readonly force: number;
+    readonly defence: number;
+    readonly stamina: number;
+    readonly agility: number;
+    wins?: number;
+}
+
+export class WarriorRecord implements WarriorEntity{
     public id?: string;
     /**
      * name of warrior must be unique
@@ -14,7 +24,7 @@ export class WarriorRecord {
     public readonly agility: number;
     public wins?: number;
 
-    constructor(obj: WarriorRecord) {
+    constructor(obj: WarriorEntity) {
         const{id, name, force, defence, stamina, agility, wins} = obj;
 
         const sum = [force, defence, stamina, agility].reduce((prev, curr) => prev + curr, 0);
