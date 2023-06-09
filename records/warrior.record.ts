@@ -41,7 +41,9 @@ export class WarriorRecord {
             this.id = uuid();
         }
 
-
+        if (typeof this.wins !== 'number') {
+            this.wins = 0;
+        }
 
        await pool.execute("INSERT INTO 'warriors'('id','name', 'force', 'defence', 'stamina', 'agility', 'wins') VALIUES (:id, :name, :force, :defence, :stamina, :agility, :wins)", {
            //Find better way to put values example use reduce()
