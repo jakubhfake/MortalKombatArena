@@ -34,4 +34,24 @@ export class WarriorRecord {
 
     }
 
+    async insert(): Promise<string> {
+
+    }
+
+    async update(): Promise<void> {
+
+    }
+
+    static async getOne(id: string): Promise<WarriorRecord | null> {
+
+    }
+
+    static async listAll(): Promise<WarriorRecord[]>{
+
+    }
+
+    static async listTop(topCount: number): Promise<WarriorRecord[]> {
+
+    }
+
 }
