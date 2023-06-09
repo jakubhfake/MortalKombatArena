@@ -7,7 +7,8 @@ import {homeRouter} from "./routers/home";
 import {warriorRouter} from "./routers/warrior";
 import {arenaRouter} from "./routers/arena";
 import {hallOfFameRouter} from "./routers/hall-of-fame";
-import {WarriorRecord} from "./records/warrior.record";
+import './utils/db'
+
 const app = express();
 
 app.use(methodOverride('_method'));
