@@ -1,5 +1,6 @@
 import {ValidationError} from "../utils/errors";
 import {v4 as uuid} from 'uuid';
+import {pool} from "../utils/db";
 
 export class WarriorRecord {
     public id?: string;
@@ -41,7 +42,18 @@ export class WarriorRecord {
         }
 
 
-        "INSERT INTO"
+
+       await pool.execute("INSERT INTO 'warriors'('id','name', 'force', 'defence', 'stamina', 'agility', 'wins') VALIUES (:id, :name, :force, :defence, :stamina, :agility, :wins)", {
+           //Find better way to put values example use reduce()
+           id: this.id,
+           name: this.name,
+           force: this.force,
+           defence: this.defence,
+           stamina: this.stamina,
+           agility: this.agility,
+           wins: this.wins,
+       })
+
     }
 
     async update(): Promise<void> {
