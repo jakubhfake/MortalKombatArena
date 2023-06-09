@@ -1,4 +1,5 @@
 import {ValidationError} from "../utils/errors";
+import {v4 as uuid} from 'uuid';
 
 export class WarriorRecord {
     public id?: string;
@@ -35,7 +36,12 @@ export class WarriorRecord {
     }
 
     async insert(): Promise<string> {
+        if (!this.id) {
+            this.id = uuid();
+        }
 
+
+        "INSERT INTO"
     }
 
     async update(): Promise<void> {
