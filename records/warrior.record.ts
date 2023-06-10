@@ -27,24 +27,17 @@ export class WarriorRecord {
         if(name.length <= 3 && name.length >= 50) {
             throw new ValidationError(`Imię wojownika musi posiadać od 3 do 50 znaków. Aktualnie jest to ${name.length}`);
         }
-        this.id = id;
+        this.id = id ?? uuid();
+        this.wins = wins ?? 0;
         this.name = name;
         this.force = force;
         this.defence = defence;
         this.stamina = stamina;
         this.agility = agility;
-        this.wins = wins;
 
     }
 
     async insert(): Promise<string> {
-        if (!this.id) {
-            this.id = uuid();
-        }
-
-        if (typeof this.wins !== 'number') {
-            this.wins = 0;
-        }
 
        await pool.execute("INSERT INTO 'warriors'('id','name', 'force', 'defence', 'stamina', 'agility', 'wins') VALIUES (:id, :name, :force, :defence, :stamina, :agility, :wins)", {
            //Find better way to put values example use reduce()
