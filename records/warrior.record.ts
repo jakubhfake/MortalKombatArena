@@ -15,7 +15,7 @@ export class WarriorRecord {
     public readonly agility: number;
     public wins?: number;
 
-    constructor(obj: Pick<WarriorRecord, 'id' | 'name' | 'force' | 'defence' | 'stamina' | 'agility'>) {
+    constructor(obj: Omit<WarriorRecord, 'insert' | 'update'>) {
         const{id, name, force, defence, stamina, agility, wins} = obj;
 
         const sum = [force, defence, stamina, agility].reduce((prev, curr) => prev + curr, 0);
@@ -56,7 +56,7 @@ export class WarriorRecord {
            agility: this.agility,
            wins: this.wins,
        })
-
+        return '';
     }
 
     async update(): Promise<void> {
@@ -64,15 +64,15 @@ export class WarriorRecord {
     }
 
     static async getOne(id: string): Promise<WarriorRecord | null> {
-
+        return null;
     }
 
     static async listAll(): Promise<WarriorRecord[]>{
-
+        return [];
     }
 
     static async listTop(topCount: number): Promise<WarriorRecord[]> {
-
+        return [];
     }
 
 }
