@@ -26,7 +26,7 @@ export class WarriorRecord {
             }
         }
 
-        const sum = stats.reduce((prev, curr) => prev + curr, 0);
+        const sum = skills.reduce((prev, curr) => prev + curr, 0);
 
         if (sum !== 10) {
             throw new ValidationError(`Suma wszystkich statystyk musi wynosić 10. Aktualnie wynosi ona ${sum}`);

@@ -19,8 +19,8 @@ Rejestracja wojownika polega na wpisaniu jego daych i rozplanowaniu umiejętnoś
 - Wytrzymałość,
 - Zwinność,
 
-Trudność poleg na tym, że do rozdania jest łącznie 10 punktów pomiędzy umiejętności. Każda statystyka musi wynosić min 1. łącznie statystyki muszą wynosić 10, nigdy nie mniej.
-Te informacje kiedyzostaną zapisane nigdy się nie zmienią. Tzn. np. podczas walki utrata obrony jest tymczasowa, nie pownna zostać zapisana między walkami.
+Trudność polega na tym, że do rozdania jest łącznie 10 punktów pomiędzy umiejętności. Każda statystyka musi wynosić min 1. łącznie statystyki muszą wynosić 10, nigdy nie mniej.
+Te informacje kiedy zostaną zapisane nigdy się nie zmienią. Tzn. np. podczas walki utrata obrony jest tymczasowa, nie pownna zostać zapisana między walkami.
 
 - Liczba zwycięst wynosi domyślnie: 0,
 
