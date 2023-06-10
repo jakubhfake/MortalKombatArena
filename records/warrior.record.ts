@@ -18,7 +18,15 @@ export class WarriorRecord {
     constructor(obj: Omit<WarriorRecord, 'insert' | 'update'>) {
         const{id, name, force, defence, stamina, agility, wins} = obj;
 
-        const sum = [force, defence, stamina, agility].reduce((prev, curr) => prev + curr, 0);
+        const skills = [force, defence, stamina, agility];
+
+        for (const skill of skills) {
+            if (skill < 1) {
+                throw new ValidationError(`Każda z umiejetności musi wynosić min. 1. Proszę dokonać zmiany.`);
+            }
+        }
+
+        const sum = stats.reduce((prev, curr) => prev + curr, 0);
 
         if (sum !== 10) {
             throw new ValidationError(`Suma wszystkich statystyk musi wynosić 10. Aktualnie wynosi ona ${sum}`);
@@ -49,7 +57,7 @@ export class WarriorRecord {
            agility: this.agility,
            wins: this.wins,
        })
-        return '';
+        return this.id;
     }
 
     async update(): Promise<void> {
