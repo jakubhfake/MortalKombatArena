@@ -1,6 +1,7 @@
 import {ValidationError} from "../utils/errors";
 import {v4 as uuid} from 'uuid';
 import {pool} from "../utils/db";
+import {FieldPacket} from "mysql2";
 
 
 export class WarriorRecord {
@@ -47,7 +48,7 @@ export class WarriorRecord {
 
     async insert(): Promise<string> {
 
-       await pool.execute("INSERT INTO 'warriors'('id','name', 'force', 'defence', 'stamina', 'agility', 'wins') VALIUES (:id, :name, :force, :defence, :stamina, :agility, :wins)", {
+       await pool.execute("INSERT INTO 'warriors'('id','name', 'force', 'defence', 'stamina', 'agility', 'wins') VALUES (:id, :name, :force, :defence, :stamina, :agility, :wins)", {
            //Find better way to put values example use reduce()
            id: this.id,
            name: this.name,
@@ -61,11 +62,15 @@ export class WarriorRecord {
     }
 
     async update(): Promise<void> {
-
+        await pool.execute("UPDATE `warriors` SET `wins` = :wins", {
+            wins: this.wins,
+        });
     }
 
     static async getOne(id: string): Promise<WarriorRecord | null> {
-        return null;
+        await pool.execute("SELECT * FROM `warriors` WHERE `id` = :id", {
+            id,
+        }) as [WarriorRecord[], FieldPacket];
     }
 
     static async listAll(): Promise<WarriorRecord[]>{
