@@ -1,4 +1,28 @@
 <h2>Zarejestrój swojego wojownika</h2>
 <h3>Zaplanuj umiejętności Twojego wojownika</h3>
 <p>Trudność polega na tym, że do rozdania jest łącznie 10 punktów pomiędzy umiejętności. Każda umiejętność musi wynosić min 1, łącznie statystyki nie mogą wynosić nie mniej i nie więcej niż 10.</p>
-<form action=""></form>
+<form action="/warrior" method="post">
+    <label>
+        Imię:<br>
+            <input type="text" name="name" minlength="3" maxlength="50">
+        </br>
+    </label>
+    <label>
+        Siła:<br>
+        <input type="number" name="force" value="1" min="1" max="10">
+        </br>
+    </label>
+    Obrona:<br>
+    <input type="number" name="defence" value="1" min="1" max="10">
+    </br>
+    </label>
+    Wytrzymałość:<br>
+    <input type="number" name="stamina" value="1" min="1" max="10">
+    </br>
+    </label>
+    Zwinność:<br>
+    <input type="number" name="agility" value="1" min="1" max="10">
+    </br>
+    </label>
+    <button type="submit">Zarejestruj</button>
+</form>

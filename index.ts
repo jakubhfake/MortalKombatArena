@@ -30,16 +30,6 @@ app.use('/hall-of-fame', hallOfFameRouter);
 
 //app.use(handleError);
 
-const warrior = new WarriorRecord({
-    name: 'Jakub',
-    agility: 3,
-    defence: 3,
-    force: 2,
-    stamina: 2,
-})
-
-console.log(warrior)
-
 app.listen(3000, 'localhost', () => {
     console.log('Listening on http://localhost:3000');
 });
