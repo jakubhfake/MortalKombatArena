@@ -3,6 +3,7 @@ import {v4 as uuid} from 'uuid';
 import {pool} from "../utils/db";
 import {FieldPacket} from "mysql2";
 
+type WarriorRecordResults = [WarriorRecord[], FieldPacket];
 
 export class WarriorRecord {
     public id?: string;
@@ -68,17 +69,23 @@ export class WarriorRecord {
     }
 
     static async getOne(id: string): Promise<WarriorRecord | null> {
-        await pool.execute("SELECT * FROM `warriors` WHERE `id` = :id", {
+        const [results] = await pool.execute("SELECT * FROM `warriors` WHERE `id` = :id", {
             id,
-        }) as [WarriorRecord[], FieldPacket];
+        }) as WarriorRecordResults;
+
+        return results.length === 0 ? null : results[0];
     }
 
     static async listAll(): Promise<WarriorRecord[]>{
-        return [];
+        const [results] = await pool.execute("SELECT * FROM `warriors`") as WarriorRecordResults;
+        return results.map(obj => new WarriorRecord(obj));
     }
 
     static async listTop(topCount: number): Promise<WarriorRecord[]> {
-        return [];
+        const [results] = await pool.execute("SELECT * FROM `warriors` ORDER BY `wins` DESC LIMIT :topCount", {
+            topCount,
+        }) as WarriorRecordResults;
+        return results.map(obj => new WarriorRecord(obj));
     }
 
 }
