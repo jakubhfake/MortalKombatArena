@@ -3,22 +3,22 @@ import {v4 as uuid} from 'uuid';
 import {pool} from "../utils/db";
 import {FieldPacket} from "mysql2";
 
-type WarriorRecordResults = [WarriorRecord[], FieldPacket];
+type WarriorRecordResults = [WarriorRecord[], FieldPacket[]];
 
 export class WarriorRecord {
     public id?: string;
     /**
      * name of warrior must be unique
      */
-    public readonly name: string;
+    public readonly name?: string;
     public readonly force: number;
     public readonly defence: number;
     public readonly stamina: number;
     public readonly agility: number;
     public wins?: number;
 
-    constructor(obj: Omit<WarriorRecord, 'insert' | 'update'>) {
-        const{id, name, force, defence, stamina, agility, wins} = obj;
+    constructor(obj: Omit<WarriorRecord, "insert" | "update">) {
+        const {id, name, force, defence, stamina, agility, wins} = obj;
 
         const skills = [force, defence, stamina, agility];
 
@@ -34,7 +34,7 @@ export class WarriorRecord {
             throw new ValidationError(`Suma wszystkich statystyk musi wynosić 10. Aktualnie wynosi ona ${sum}`);
         }
 
-        if(name.length <= 3 && name.length >= 50) {
+        if(name.length <= 3 && name.length > 50) {
             throw new ValidationError(`Imię wojownika musi posiadać od 3 do 50 znaków. Aktualnie jest to ${name.length}`);
         }
         this.id = id ?? uuid();
@@ -49,7 +49,7 @@ export class WarriorRecord {
 
     async insert(): Promise<string> {
 
-       await pool.execute("INSERT INTO 'warriors'('id','name', 'force', 'defence', 'stamina', 'agility', 'wins') VALUES (:id, :name, :force, :defence, :stamina, :agility, :wins)", {
+       await pool.execute("INSERT INTO warriors(`id`, `name`, `force`, `defence`, `stamina`, `agility`, `wins`) VALUES (:id, :name, :force, :defence, :stamina, :agility, :wins)", {
            //Find better way to put values example use reduce()
            id: this.id,
            name: this.name,
@@ -63,7 +63,7 @@ export class WarriorRecord {
     }
 
     async update(): Promise<void> {
-        await pool.execute("UPDATE `warriors` SET `wins` = :wins", {
+        await pool.execute("UPDATE warriors SET `wins` = :wins", {
             wins: this.wins,
         });
     }
