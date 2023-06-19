@@ -88,4 +88,14 @@ export class WarriorRecord {
         return results.map(obj => new WarriorRecord(obj));
     }
 
+    static async isNameTaken(name: string): Promise<boolean> {
+        const [results] = await pool.execute("SELECT * FROM `warriors` WHERE `name` = :name", {
+            name,
+        }) as WarriorRecordResults;
+        console.log(results.length);
+
+        return results.length > 0;
+
+    }
+
 }
