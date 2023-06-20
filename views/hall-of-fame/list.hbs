@@ -8,23 +8,18 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th>1</th>
-            <td>
-                8
-            </td>
-            <td>
-                Tester
-            </td>
-        </tr>
-        <tr>
-            <th>2</th>
-            <td>
-                18
-            </td>
-            <td>
-                Testerek
-            </td>
-        </tr>
+        {{#each warriors}}
+            <tr>
+                <th>
+                    {{@index}}
+                </th>
+                <td>
+                    {{this.wins}}
+                </td>
+                <td>
+                    {{this.name}}
+                </td>
+            </tr>
+        {{/each}}
     </tbody>
 </table>

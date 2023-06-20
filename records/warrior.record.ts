@@ -35,7 +35,7 @@ export class WarriorRecord {
         }
         console.log(name.length);
         if(name.length < 3 || name.length > 50) {
-            throw new ValidationError(`Imię wojownika musi posiadać od 3 do 50 znaków. Aktualnie jest to ${name.length}`);
+            throw new ValidationError(`Imię wojownika "${name}" musi posiadać od 3 do 50 znaków. Aktualnie jest to ${name.length}`);
         }
         this.id = id ?? uuid();
         this.wins = wins ?? 0;
