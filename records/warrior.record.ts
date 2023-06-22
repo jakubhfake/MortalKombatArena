@@ -33,7 +33,7 @@ export class WarriorRecord {
         if (sum !== 10) {
             throw new ValidationError(`Suma wszystkich statystyk musi wynosić 10. Aktualnie wynosi ona ${sum}`);
         }
-        console.log(name.length);
+
         if(name.length < 3 || name.length > 50) {
             throw new ValidationError(`Imię wojownika "${name}" musi posiadać od 3 do 50 znaków. Aktualnie jest to ${name.length}`);
         }
