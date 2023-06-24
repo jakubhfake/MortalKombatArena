@@ -33,8 +33,9 @@ Algorytm walki (można go zmodyfikować, to tylko propozycja):
 2. Wojownik, który zaczyna wykonuje atak o wartości równej jego sile,
 3. Jeżeli wojownik atakować ma tarczę + zwinności większą niż siła ataku, to:
     3.1 Odejmowane mu jest tarcza w wysokości ataku.
-   3.2 A) Jeżeli atak był większy niż tarcza, to odejmowana jest mu od życia pozostała ilość siły ataku.
-   3.2 B) Jeżeli atak był maksymalnie tyle ile wynosi tarcza, to nie jest odejmowane życie.
+   3.1 A) Jeżeli atak był większy niż tarcza, to odejmowana jest mu od życia pozostała ilość siły ataku.
+   3.1 B) Jeżeli atak był maksymalnie tyle ile wynosi tarcza, to nie jest odejmowane życie.
+   3.2 Jeżeli warunek 3 NIE JEST SPEŁNIONY to po prostu od życia odejmujemy atak.
     4. Następnie zmiana kolejności i teraz atakowany zostaje atakijącym, a atakujący zostaje atakowanym.
     5. Powtarzamy punkty 2 - 4 tak długo, dopuki ktoś nie umrze, czyli jego HP nie spadnie do min. 0.
     

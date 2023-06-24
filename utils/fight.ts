@@ -1,6 +1,9 @@
 import {WarriorRecord} from "../records/warrior.record";
 
-export const fight = (warrior1: WarriorRecord, warrior2: WarriorRecord): string[] => {
+export const fight = (warrior1: WarriorRecord, warrior2: WarriorRecord): {
+    log: string[];
+    winner: WarriorRecord;
+} => {
     const log: string[] = [];
 
     const warrior1Obj = {
@@ -26,11 +29,19 @@ export const fight = (warrior1: WarriorRecord, warrior2: WarriorRecord): string[
             if (defender.dp < 0) {
                 defender.hp += defender.dp
             }
+        } else {
+            defender.hp -= attackForce;
         }
+        console.log(attacker, defender);
 
         [defender, attacker] = [attacker, defender];
 
     } while (defender.hp > 0);
 
-    return log;
+    const winner = defender.warrior;
+
+    return {
+        log,
+        winner,
+    };
 }
