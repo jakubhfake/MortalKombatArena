@@ -24,21 +24,27 @@ export const fight = (warrior1: WarriorRecord, warrior2: WarriorRecord): {
     do {
         const attackForce = attacker.warrior.force;
 
+        log.push(`${attacker.warrior.name} atakuje ${defender.warrior.name} z siłą ${attackForce}.`)
+
         if (defender.dp + defender.warrior.agility > attackForce) {
+            log.push(`${defender.warrior.name} broni się przed atakiem ${attacker.warrior.name}.`)
             defender.dp -= attackForce;
             if (defender.dp < 0) {
+                log.push(`${attacker.warrior.name} przełamał obronę ${defender.warrior.name} zadając mu ${-defender.hp} obrażeń.`)
                 defender.hp += defender.dp
             }
         } else {
+            log.push(`${attacker.warrior.name} zadał ${attackForce} obrażeń ${defender.warrior.name}.`)
             defender.hp -= attackForce;
         }
-        console.log(attacker, defender);
+
 
         [defender, attacker] = [attacker, defender];
 
     } while (defender.hp > 0);
 
     const winner = defender.warrior;
+    log.push(`Starcie zwyciężył ${winner.name} !`)
 
     return {
         log,
