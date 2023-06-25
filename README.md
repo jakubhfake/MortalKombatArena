@@ -5,8 +5,6 @@ JS, Express, Node.js, TypeScript, MySQL.
 #Uruchomienie aplikacji:
 1. Aby uruchomić bazę danych lokalnie uruchom np xampp następnie HeidiSqL
 
-
-
 Tworzymy grę, w której walczy się różnymi przeciwnikami.
 Przeciwnicy są tworzeni przez inne osoby w systemie.
 
